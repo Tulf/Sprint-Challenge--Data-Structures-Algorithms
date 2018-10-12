@@ -5,27 +5,27 @@ class BinarySearchTree:
         self.right = None
 
     #commented out for iterative implementation
-    # def depth_first_for_each(self, cb):
-    #     #  Call cb on current node
-    #     cb(self.value)
-    #     # if there is a left recursive call
-    #     if self.left:
-    #         self.left.depth_first_for_each(cb)
-    #     # If there is a right recursive call
-    #     if self.right:
-    #         self.right.depth_first_for_each(cb)
-
     def depth_first_for_each(self, cb):
-        stack = []
-        stack.append(self)
+        #  Call cb on current node
+        cb(self.value)
+        # if there is a left recursive call
+        if self.left:
+            self.left.depth_first_for_each(cb)
+        # If there is a right recursive call
+        if self.right:
+            self.right.depth_first_for_each(cb)
 
-        while len(stack):
-            current = stack.pop()
-            if current.right:
-                stack.append(current.right)
-            if current.left:
-                stack.append(current.left)
-            cb(current.value)
+    # def depth_first_for_each(self, cb):
+    #     stack = []
+    #     stack.append(self)
+    #
+    #     while len(stack):
+    #         current = stack.pop()
+    #         if current.right:
+    #             stack.append(current.right)
+    #         if current.left:
+    #             stack.append(current.left)
+    #         cb(current.value)
 
     def breadth_first_for_each(self, cb):
         # Use a ds like a queue

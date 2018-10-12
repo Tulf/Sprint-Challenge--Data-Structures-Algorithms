@@ -19,10 +19,11 @@ class BinarySearchTree:
         queue = []
         # add root node
         queue.append(self)
-        # iterate over queue and pop current value
+        # iterate over queue and call function
         while len(queue) > 0:
             current = queue[0]
             cb(current.value)
+            # pop out of queue
             queue.pop(0)
             # if there is a left node append
             if current.left:

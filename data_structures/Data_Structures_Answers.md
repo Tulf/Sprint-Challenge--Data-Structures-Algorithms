@@ -5,7 +5,9 @@ O(n) since it simply traverses all the nodes in the structure
 2. What is the space complexity of your `depth_first_for_each` function?
 O(n) as well since we are storing
 3. What is the runtime complexity of your `breadth_first_for_each` method?
-O(n) only one loop
+# O(n) only one loop
+by removing from the queue (which is actually a list) you need to shift the entire array while the loop is running so the worst case is O(n**2)
+This happens in the case of a BST with one root node.
 4. What is the space complexity of your `breadth_first_for_each` method?
 O(n) because of the stack
 5. What is the runtime complexity of your `heapsort` function?

@@ -1,6 +1,18 @@
 def heapsort(arr):
-
-
+    # use Heap class to initialize heap and create a list for the sorted heap
+    # array representation used for heaps beacuse it's space efficient and you can calculate the children easily
+    # eg if index I, left child = 2I + 1 (odd) right child even: 2I + 2.
+    heap = Heap()
+    list = []
+    #loop over array that's passed in and insert values into heap, so it is sorted by the below methods
+    for i in arr:
+        heap.insert(i)
+    #loop over array  again and insert heap elements into list while deleting from heap (need to run seperately or heap won't be full)
+    for i in arr:
+        list.insert(0, heap.delete())
+        # unforutnaley we have to use the stupid insert method here and can't just append
+    # return the list as that we just sorted
+    return list
 
 class Heap:
     def __init__(self):
